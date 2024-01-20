@@ -1,9 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OM SAI Collections</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 15px;
+            width: 300px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-<p>I am going to keep this as my official website, will be trying to develop this website from the scratch.</p>
- <img src= "SWASTHIKA.png" alt="this is a test image" title="this is a test image" height="99" width="99"> 
+
+<header>
+    <h1>OM SAI Collections</h1>
+</header>
+
+<section id="products">
+    <!-- Product cards will go here -->
+</section>
+
+<footer>
+    <p>&copy; 2024 OM SAI Collections</p>
+</footer>
+
+<script>
+    // Function to fetch product data from a folder
+    async function fetchProductData(category) {
+        try {
+            const response = await fetch(`products/${category}/data.json`);
+            const data = await response.json();
+            return data.products;
+        } catch (error) {
+            console.error(`Error fetching product data for ${category}:`, error);
+            return [];
+        }    
+    }
+
+    // Function to create product cards
+    function createProductCard(product) {
+        // ... your existing createProductCard code ...
+    }
+
+    // Function to display products for a specific category
+    async function displayProducts(category) {
+        const productsSection = document.getElementById("products");
+        productsSection.innerHTML = ""; // Clear existing products
+
+        try {
+            const products = await fetchProductData(category);
+
+            if (products.length === 0) {
+                console.warn(`No products found for category: ${category}`);
+            }
+
+            products.forEach(product => {
+                const card = createProductCard(product);
+                productsSection.appendChild(card);
+            });
+        } catch (error) {
+            console.error(`Error displaying products:`, error);
+        }
+    }
+
+    const categories = ['saree', 'tops', 'nighty'];
+
+    categories.forEach(category => {
+        const button = document.createElement("button");
+        button.textContent = `Show ${category}`;
+        button.title = `Show ${category} collection`;
+        button.addEventListener("click", () => displayProducts(category));
+        document.body.appendChild(button);
+    });
+</script>
 </body>
 </html>
