@@ -1,0 +1,23 @@
+{
+    "products": [
+      {
+        "name": "tops1",
+        "price": 30,
+        "folder": "tops",
+        "image": "tops1.jpg"
+      },
+      {
+        "name": "tops2",
+        "price": 40,
+        "folder": "tops",
+        "image": "tops2.jpg"
+      },
+      {
+        "name": "tops3",
+        "price": 40,
+        "folder": "tops",
+        "image": "tops3.jpg"
+      }
+      
+    ]
+ }

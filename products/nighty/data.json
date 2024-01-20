@@ -1,0 +1,23 @@
+{
+    "products": [
+      {
+        "name": "night1",
+        "price": 40,
+        "folder": "nighty",
+        "image": "night1.jpg"
+      },
+      {
+        "name": "night2",
+        "price": 35,
+        "folder": "nighty",
+        "image": "night2.jpg"
+      },
+      {
+        "name": "night3",
+        "price": 35,
+        "folder": "nighty",
+        "image": "night3.jpg"
+      }
+       
+  ]
+  }
