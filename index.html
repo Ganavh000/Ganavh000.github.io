@@ -90,7 +90,7 @@
     card.className = "product";
 
     const image = document.createElement("img");
-    image.src = `products/images/${product.image}`;
+    image.src = `products/${product.folder}/images/${product.image}`;
     image.alt = `${product.name} - ${product.description}`;
 
     const name = document.createElement("h2");
