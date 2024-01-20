@@ -1,0 +1,23 @@
+{
+    "products": [
+      {
+        "name": "saree1",
+        "price": 50,
+        "image": "saree1.jpg",
+        "folder": "images"
+      },
+      {
+        "name": "saree2",
+        "price": 60,
+        "image": "saree2.jpg",
+        "folder": "images"
+      },
+      {
+        "name": "saree3",
+        "price": 60,
+        "image": "saree2.jpg",
+        "folder": "images"
+      }
+      
+    ]
+  }
